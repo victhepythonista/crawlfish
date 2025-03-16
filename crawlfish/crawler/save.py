@@ -20,17 +20,28 @@ class ScrapedDataSaver:
 
 	'''
 	@staticmethod
-	def to_csv_file(  data:list , file:str = "Scraped_data.csv" , overwrite = True):
+	def to_csv_file(  data:list , file:str = "Scraped_data.csv" , 
+						overwrite = True , delimiter="," ):
 		'''Saves data to  CSV file '''
 		data = data 
+		data_to_write = []
 		if not check_file(file):
 			raise FileNotFoundError("Could not write to file - {}".format(file))
-		# try and get existing data 
-	 
+		# try and get existing data
+		file_size = os.path.getsize(file)
+		existing_data = []
+		if file_size > 0:
+			# check for existing data
+			with open(file, 'r' ) as f:
+				existing_data = [ row for row in csv.reader(f)]
+		if overwrite:
+			data_to_write = data
+		else:
+			data_to_write = existing_data + data[1:] 
 
 		with open(file , "w" , newline= '') as f:
-			writer = csv.writer(f )
-			for row in data:
+			writer = csv.writer(f , delimiter = delimiter)
+			for row in data_to_write:
 				writer.writerow(row)
 
 
@@ -75,7 +86,7 @@ class ScrapedDataSaver:
 
 
 	@staticmethod
-	def to_dict(data:list , key_index:int):
+	def to_dict(data:list , key_index:int=0):
 		'''Converts the data to a dict object
 		
 		Parameters
@@ -106,7 +117,8 @@ class ScrapedDataSaver:
 		return json_obj 
 
 	@staticmethod
-	def to_json_file(data:list , key_index = 0, file:str = "scraped_data.json" , overwrite = True, ensure_ascii = False  , indent = 4 ):
+	def to_json_file(data:list , key_index = 0, file:str = "scraped_data.json" ,
+				 overwrite = True, ensure_ascii = False  , indent = 4 , encoding = 'utf-8' ):
 		'''Converts the data to a json object'''
 		if not check_file(file):
 			raise FileNotFoundError("Could not load or write to file :( ")
@@ -124,7 +136,7 @@ class ScrapedDataSaver:
 			data_to_write = data_in_dict_form
 		else:
 			data_to_write = existing_json | data_in_dict_form
-		with open(file, 'w', encoding='utf-8') as f:
+		with open(file, 'w', encoding=encoding) as f:
 			json.dump(data_to_write, f, ensure_ascii=ensure_ascii, indent=indent)
 		return json.dumps(data_in_dict_form)
 	

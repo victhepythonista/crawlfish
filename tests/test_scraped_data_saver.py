@@ -1,4 +1,7 @@
-import os , json , openpyxl
+import os 
+import json 
+import openpyxl
+import csv
 from unittest import TestCase
 
 
@@ -31,6 +34,17 @@ class TestScrapedDataSaver(TestCase):
 			os.remove(test_file)
 		data_saver.to_csv_file(test_scraped_data , test_file)
 		self.assertTrue(os.path.isfile(test_file))
+		os.remove(test_file)
+		# Test overwrite
+			
+		data_to_append = [["NAME" , "AGE" , "EMAIL"], ["Heisenberg" , "67" , "albrqq@gmail.com"],]
+		expected_append_data = test_scraped_data + data_to_append[1:]
+		data_saver.to_csv_file(test_scraped_data, test_file)
+		data_saver.to_csv_file(data_to_append , test_file, overwrite = False)
+		with open(test_file , 'r') as f:
+			reader = csv.reader(f)
+			rows = [row for row in reader ]
+			self.assertTrue(rows == expected_append_data)
 
 
 	def test_saving_to_spreadsheet_file(self):
