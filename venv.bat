@@ -1,0 +1,1 @@
+crawlfish_venv/scripts/activate
