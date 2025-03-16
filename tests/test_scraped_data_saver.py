@@ -5,7 +5,7 @@ import csv
 from unittest import TestCase
 
 
-from crawlfish.crawler.save import ScrapedDataSaver
+from crawlfish.crawler.save import ListDataSaver
 
 
 test_scraped_data = [
@@ -24,9 +24,9 @@ test_scraped_data_dict = {
 
 }
 test_scraped_data_json = json.dumps(test_scraped_data_dict)
-data_saver = ScrapedDataSaver()
+data_saver = ListDataSaver()
 
-class TestScrapedDataSaver(TestCase):
+class TestListDataSaver(TestCase):
 
 	def test_saving_to_csv_file(self):
 		test_file = "tests/test_scraped_data.csv"
