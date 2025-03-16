@@ -6,7 +6,7 @@ from unittest import TestCase
 
 
 from crawlfish.crawler.save import ListDataSaver
-
+from crawlfish import CSVSaveOption , ExcelSaveOption , JSONSaveOption,JSONFileSaveOption
 
 test_scraped_data = [
 			["NAME" , "AGE" , "EMAIL"],
@@ -107,3 +107,43 @@ class TestListDataSaver(TestCase):
 			self.assertTrue(expected_append_data_json == json.dumps(data) )
 		os.remove(test_file)
 
+
+	def test_save_by_option(self):
+
+
+
+		# csv 
+		test_file = "tests/data.csv"
+		save_option  = CSVSaveOption(test_file)
+		data_saver.save_by_option(test_scraped_data , save_option)
+		self.assertTrue(os.path.isfile(test_file))
+		with open(test_file , "r") as f:
+			reader = csv.reader(f)
+			rows = [row for row in reader]
+			self.assertTrue(rows == test_scraped_data)
+		os.remove(test_file)
+
+		# excel
+		test_file = "tests/excel.xlsx"
+		save_option = ExcelSaveOption(test_file , "testsheet" )
+		data_saver.save_by_option(test_scraped_data , save_option)
+		workbook  = openpyxl.load_workbook(test_file)
+		sheet = workbook["testsheet"]
+		sheet_values = [ [ i for i in row] for row in sheet.values  ]
+		self.assertTrue(sheet_values == test_scraped_data)
+		os.remove(test_file)
+
+		# json 
+		save_option = JSONSaveOption(  )
+		result = data_saver.save_by_option(test_scraped_data , save_option)
+		self.assertTrue(json.dumps(test_scraped_data_dict) == result)
+
+		# json file
+		test_file = "tests/json.json"
+		save_option = JSONFileSaveOption(test_file  )
+		result = data_saver.save_by_option(test_scraped_data , save_option)
+		self.assertTrue(json.dumps(test_scraped_data_dict) == result)
+		with open(test_file , "r" ) as f:
+			data = json.load(f)
+			self.assertTrue(json.dumps(data) == test_scraped_data_json)
+		os.remove(test_file)

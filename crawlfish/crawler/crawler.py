@@ -1,5 +1,7 @@
 
 from tqdm import tqdm
+
+from .save import ListDataSaver
 from .save_option import SaveOption ,ExcelSaveOption , JsonSaveOption , JsonFileSaveOption, CSVSaveOption
 
 default_save_option = CSVSaveOption("ScrapedData.csv")
@@ -12,9 +14,26 @@ class Crawler:
 	save_format = SaveFormat.EXCEL
 	output_folder = os.getcwd()
 	def __init__(self):
-		empty_links = ""
-		invalid_links = ""
-		scraped_links = ""
+		self.save_option = CSVSaveOption
 
 
-	def scrape_links(self , links , scraping_function , scraping_function_args , scraping_function_kwargs , output_file = "scraped_data.csv" , save_option = default_save_option):
+
+
+	def scrape_links(self , urls , scraping_function , scraping_function_args , 
+						scraping_function_kwargs , output_file = "scraped_data.csv" ,
+						 save_option = self.save_option):
+		'''
+
+		Returns
+		--------
+		scraped_data 
+
+		'''
+		scraped_data = []
+		for url in tqdm(urls):
+			data = scraping_function(*scraping_function_args , **scraping_function_kwargs)
+			scraped_data.append(data)
+		data_saver = ListDataSaver()
+		data_saver.save_by_option(scraped_data , save_option)
+
+

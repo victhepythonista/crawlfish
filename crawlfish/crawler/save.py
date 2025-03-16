@@ -1,6 +1,7 @@
 import os , csv  , json , openpyxl
 from openpyxl import Workbook
 
+from .save_options import SaveOption , InvalidSaveOptionError, CSVSaveOption , ExcelSaveOption , JSONSaveOption,JSONFileSaveOption
 
 
 def check_file(file_path):
@@ -14,16 +15,40 @@ def check_file(file_path):
 		f.write("")
 	return os.path.isfile(file_path)
 
-class ScrapedDataSaver:
+class ListDataSaver:
 	'''
 	This class contains methods for saving scraped data in different file formats
 
 	'''
 	@staticmethod
+	def save_by_option(data:list , save_option:SaveOption):
+		if not isinstance(save_option , SaveOption):
+			raise InvalidSaveOptionError( save_option)
+
+		# CSV
+		if isinstance(save_option ,CSVSaveOption ):
+			return ListDataSaver.to_csv_file( data ,save_option.file , 
+											save_option.overwrite , save_option.delimiter )
+		# Excel spreadsheet
+		if isinstance(save_option , ExcelSaveOption ):
+			return ListDataSaver.to_spreadsheet_file(data , save_option.file , 
+													save_option.sheet_name , save_option.overwrite)
+		# JSON object 
+		if isinstance(save_option , JSONSaveOption ):
+			return ListDataSaver.to_json(data , save_option.key_index)
+		# JSON file
+		if isinstance(save_option , JSONFileSaveOption ):
+			return ListDataSaver.to_json_file(data , save_option.key_index , save_option.file ,  save_option.overwrite ,
+											 save_option.ensure_ascii  , save_option.indent  , 
+											 save_option.encoding  )
+		raise InvalidSaveOptionError(save_option)
+
+	@staticmethod
 	def to_csv_file(  data:list , file:str = "Scraped_data.csv" , 
 						overwrite = True , delimiter="," ):
 		'''Saves data to  CSV file '''
 		data = data 
+		original_data = data
 		data_to_write = []
 		if not check_file(file):
 			raise FileNotFoundError("Could not write to file - {}".format(file))
@@ -43,7 +68,7 @@ class ScrapedDataSaver:
 			writer = csv.writer(f , delimiter = delimiter)
 			for row in data_to_write:
 				writer.writerow(row)
-
+		return original_data
 
 
 	@staticmethod 
@@ -51,6 +76,7 @@ class ScrapedDataSaver:
 		'''Saves data to an excel spreadheet file . 
 		The program will not overwite existing data provide that a unique sheet name id provided
 		'''
+		original_data = data 
 		data = data 
 		if not check_file(file):
 			return FileNotFoundError("Could not create or write to file - {}".format(file))
@@ -83,6 +109,7 @@ class ScrapedDataSaver:
 		for row in data:
 			sheet.append(row)
 		workbook.save(file)
+		return original_data 
 
 
 	@staticmethod
@@ -112,7 +139,7 @@ class ScrapedDataSaver:
 	@staticmethod
 	def to_json(data:list , key_index = 0 ):
 		'''Converts the data to a json object'''
-		data_in_dict_form = ScrapedDataSaver.to_dict(data , key_index = key_index)
+		data_in_dict_form = ListDataSaver.to_dict(data , key_index = key_index)
 		json_obj = json.dumps(data_in_dict_form)
 		return json_obj 
 
@@ -122,7 +149,7 @@ class ScrapedDataSaver:
 		'''Converts the data to a json object'''
 		if not check_file(file):
 			raise FileNotFoundError("Could not load or write to file :( ")
-		data_in_dict_form = ScrapedDataSaver.to_dict(data , key_index = key_index)
+		data_in_dict_form = ListDataSaver.to_dict(data , key_index = key_index)
 		existing_json = ""
 		try:
 			with open(file , "r")  as f:

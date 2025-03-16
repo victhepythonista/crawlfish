@@ -24,11 +24,12 @@ class SaveOption:
 
 
 class CSVSaveOption(SaveOption):
-	def __init__(self , file  , overwrite = True):
+	def __init__(self , file  , overwrite = True , delimiter=','):
 		SaveOption.__init__(self)
 		self.file = file 
 		self.overwrite = overwrite
 		self.save_format = save_formats.CSV_FILE
+		self.delimiter = delimiter
 
 
 
@@ -42,14 +43,26 @@ class ExcelSaveOption(SaveOption):
 		self.overwrite = overwrite
 		self.save_format = save_formats.EXCEL_FILE
 
-class JsonSaveOption(SaveOption):
-	def __init__(self , key_index):
+class JSONSaveOption(SaveOption):
+	def __init__(self , key_index = 0 ):
 		self.save_format = save_formats.JSON 
 		self.key_index = key_index 
 
-class JsonFileSaveOption(SaveOption):
-	def __init__(self ,file ,  key_index):
+class JSONFileSaveOption(SaveOption):
+	def __init__(self ,file ,  key_index = 0 ,overwrite = True, ensure_ascii = False  , indent = 4 , encoding = 'utf-8' ):
 		self.save_format = save_formats.JSON 
 		self.key_index = key_index 
+		self.ensure_ascii = ensure_ascii
+		self.encoding = encoding
+		self.indent = indent
 		self.file = file 
+		self.overwrite = overwrite
 		
+
+class InvalidSaveOptionError(Exception):
+	''' To be raised when an object is not a SaveOption object '''
+	def __init__(self , message):
+		self.message = "Crawlfish could not load this SaveOption class -> " +  message
+		super().__init__(self.message)
+
+
