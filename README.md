@@ -12,7 +12,7 @@
 - It is simple and easy to understand
 - You can use it in Python (.py) files or directly from the **command line**
 - For more documentation go to the **docstrings** . I am yet to publish the full documentation , TBA .
-- Read <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/CONTRIBUTING.md" target="_blank">this</a> if you want to contribute and <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/RELEASE_NOTES.md" target="_blank">here</a> to read the latest release notes .
+- Read <a href="https://github.com/victhepythonista/crawlfish/blob/main/CONTRIBUTING.md" target="_blank">this</a> if you want to contribute and <a href="https://github.com/victhepythonista/crawlfish/blob/main/RELEASE_NOTES.md" target="_blank">here</a> to read the latest release notes .
 
  #### Key classes :
 
@@ -22,7 +22,7 @@
 	 Has regex support when searching for text matches and atribute values  
 -  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/website_report.py" target="_blank">WebsiteReport </a>
 -  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/crawler.py" target="_blank">UrlsCrawler</a>
-	For generic web scraping programs that scrap urls from a list ot file containing the urls line by line 
+	For generic web scraping programs that scrap urls from a list or file containing the urls line by line 
 -  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/save.py" target="_blank">ListDataSaver</a>
 	Used to save data in a list into different forms ie .xlsx , .csv , .JSON . 
 	 Created to fill the need of having to create/copy a saving function every time you make a new web scraper . The catch is that the data should be in a specific format -> **format [ [ header1,header2 ] , [ data1 , data2 ],......... ]**
