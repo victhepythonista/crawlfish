@@ -119,7 +119,7 @@ options:
 
 # Quick start
 
-- A brief straight tutorial of the library's main functions and  key classes .
+- A brief straightfoward tutorial of the library's main functions and  key classes .
 - Let's get started with some examples !
 
 ### Crawling a web page
@@ -586,5 +586,5 @@ AGE,NAME,EMAIL
 
 ##### Thanks for reading , or installing or whatever . Have a good one. Cheers !
 
-![Adios! ](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnI4bmV1MGVhcjIyZGdpam44NHJscndwcmNkazF0eW5tOHppOXhiMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kaBU6pgv0OsPHz2yxy/giphy.gif)
+![Adios! ](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3J4NzA1YmdmeHFzMzMxdzI4N3Vka2t4cDI2OXY0dTNncmdwZTlmOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12xvz9NssSkaS4/giphy.gif)
 
