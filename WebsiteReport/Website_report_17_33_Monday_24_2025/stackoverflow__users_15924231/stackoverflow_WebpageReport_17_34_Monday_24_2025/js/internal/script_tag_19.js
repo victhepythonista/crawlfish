@@ -1,1 +1,0 @@
-StackExchange.ready(function(){$.get('/users/ivc/15924231/5160?prg=75ad4b21-f243-4e43-b4d5-c2ac5d9905b4');});

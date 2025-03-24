@@ -1,8 +1,0 @@
-----------------------  ----
-Pages crawled              3
-Other site urls found     74
-CSS files found           25
-Javascript files found    48
-Image files found         61
-HTML tags processed     3973
-----------------------  ----

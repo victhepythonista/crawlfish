@@ -1,6 +1,0 @@
-
-        StackExchange.using.setCacheBreakers({"Js/adops.en.js":"6da43f5e0a84","Js/ask.en.js":"","Js/begin-edit-event.en.js":"20edbaccceae","Js/copy-transpiled.en.js":"621e16cc71a9","Js/events.en.js":"","Js/explore-qlist.en.js":"ee2a4f8c3992","Js/full-anon.en.js":"a0e60b0e9acd","Js/full.en.js":"5b506c4c6452","Js/highlightjs-loader.en.js":"a3e36fe85053","Js/inline-tag-editing.en.js":"8517756a2cb6","Js/keyboard-shortcuts.en.js":"c255a5a5979b","Js/markdown-it-loader.en.js":"781aa77e9602","Js/mentions-transpiled.en.js":"bcadb48d3570","Js/moderator.en.js":"96ca184c760e","Js/postCollections-transpiled.en.js":"9f7a87e8cf0d","Js/post-validation.en.js":"44d59ccfc490","Js/question-editor.en.js":"","Js/review-v2-transpiled.en.js":"c9e05881f8ab","Js/revisions.en.js":"9dd135bb585f","Js/stacks-editor.en.js":"7523972489de","Js/tageditor.en.js":"5b8f289d02ef","Js/tageditornew.en.js":"ca426894aed0","Js/tagsuggestions.en.js":"762b96a1ae1f","Js/unlimited-transpiled.en.js":"8713a979101d","Js/wmd.en.js":"ef631802355e","Js/snippet-javascript-codemirror.en.js":"0f42dbb990fa"});
-        StackExchange.using("gps", function() {
-             StackExchange.gps.init(false);
-        });
-    
