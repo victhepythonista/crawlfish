@@ -12,3 +12,5 @@ test_data/
 crawlfish.egg-info/
 api.js
 mydata/
+tests/test_save_website_report/
+tests/test_video_download/
