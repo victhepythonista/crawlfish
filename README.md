@@ -11,19 +11,40 @@
 - An easy to use web crawling library for exploring whole websites and webpages , element searching , handy bs4 related shortcuts , generic web scraping functions  and  more 
 - It is simple and easy to understand
 - You can use it in Python (.py) files or directly from the **command line**
-- Key classes :
-		- <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/webpage_report.py" target="_blank">WebpageReport </a>
-		-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/website_report.py" target="_blank">WebsiteReport </a>
-		-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/crawler.py" target="_blank">UrlsCrawler</a>
-		-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/save.py" target="_blank">ListDataSaver</a>
-		-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/save_options.py" target="_blank">SaveOption </a>
+- For more documentation go to the **docstrings** . I am yet to publish the full documentation , TBA .
+- Read <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/CONTRIBUTING.md" target="_blank">this </a> if you want to contribute
 
-- Key functions
-		-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/http/get.py" target="_blank">get_page() </a>
-		- <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/explore_website.py" target="_blank">explore website() </a>
-		- <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/explore_webpage.py" target="_blank">explore_webpage() </a>
+ #### Key classes :
 
+- <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/webpage_report.py" target="_blank">WebpageReport </a>
+- <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/html/element_finder.py" target="_blank">ElementFinder</a>
+	-A handy class that allows you to flexibly search for elements in a bs4.BeautifulSoup instance or a HTML string . 
+	 Has regex support when searching for text matches and atribute values  
+-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/website_report.py" target="_blank">WebsiteReport </a>
+-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/crawler.py" target="_blank">UrlsCrawler</a>
+	For generic web scraping programs that scrap urls from a list ot file containing the urls line by line 
+-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/save.py" target="_blank">ListDataSaver</a>
+	Used to save data in a list into different forms ie .xlsx , .csv , .JSON . 
+	 Created to fill the need of having to create/copy a saving function every time you make a new web scraper . The catch is that the data should be in a specific format -> **format [ [ header1,header2 ] , [ data1 , data2 ],......... ]**
+-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/save_options.py" target="_blank">SaveOption </a>
+
+#### Key functions :
+-  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/http/get.py" target="_blank">get_page() </a>
+	Fetches a url , returns either a bs4.BeautifulSoup instance or a requests.Response instance  
+		You can also save the HTML output to a file
+- <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/explore_website.py" target="_blank">explore website() </a>
+	Aggressively goes through a website one url at a time grabbing all needed data along the way . It will scrape the website until every url of the website has been processed .
+		Returns a crawlfish.WebsiteReport object that contains all the jicy information
+
+- <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/explore_webpage.py" target="_blank">explore_webpage() </a>
+	Collects static code , static files urls , metadata , urls of the same site and other info from a web page . 
+		Returns a WebpageReport object that contains the information scraped
+	
+
+
+ 
 ---
+
 
 
 ## Installation
