@@ -9,3 +9,5 @@ venv/
 *.obsidian/
 venv.bat
 test_data/
+crawlfish.egg-info/
+api.js
