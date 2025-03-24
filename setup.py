@@ -23,7 +23,7 @@ setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License"
     ],
-    packages=[],
+    packages=['crawlfish'],
     python_requires=">=3.6",
  
 )

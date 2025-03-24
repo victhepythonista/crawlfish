@@ -9,8 +9,8 @@ import argparse
 from ascii_magic import AsciiArt 
 
 
-from . import crawler , supported
-from . import crawlfish_utils
+from crawlfish import  crawler , supported
+from crawlfish import crawlfish_utils
 
 
 
