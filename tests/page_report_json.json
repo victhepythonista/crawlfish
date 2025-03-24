@@ -1,0 +1,18 @@
+{
+    "static_stats": {
+        "js_tags": 0,
+        "css_tags": 0,
+        "js_urls": 0,
+        "css_urls": 0,
+        "image_urls": 0,
+        "json_tags": 0
+    },
+    "metadata": {},
+    "urls": {
+        "base_url": "https://www.sample-videos.com",
+        "network_location": "www.sample-videos.com",
+        "same_site_links": 0,
+        "discovered_urls": 0,
+        "other_site_urls": 0
+    }
+}

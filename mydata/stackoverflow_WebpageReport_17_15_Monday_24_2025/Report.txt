@@ -1,0 +1,38 @@
+
+======================================================================================
+		  WEB PAGE REPORT
+		 `````````````````
+https://stackoverflow.com
+======================================================================================
+		
+	Metadata 
+-------------------  ------------------------------------------------------------------------------
+viewport             width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0
+twitter:card         summary
+twitter:domain       stackoverflow.com
+twitter:title        Newest Questions
+twitter:description  Stack Overflow | The World’s Largest Online Community for Developers
+-------------------  ------------------------------------------------------------------------------
+
+	Urls stats
+--------------------  -------------------------
+Links from same site  325
+Other site urls       42
+Discovered links      133
+Base url              https://stackoverflow.com
+Network location      stackoverflow.com
+--------------------  -------------------------
+
+	Static data
+-------------------------  ----
+External Javasript files     18
+External CSS files            7
+Javascript  <script> tags    29
+JSON tags                     6
+CSS <style> tags              2
+Image files                  51
+HTML tags processed        2653
+-------------------------  ----
+
+============================================
+

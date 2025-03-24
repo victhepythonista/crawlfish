@@ -1,2 +1,2 @@
 
-from .get import get_page 
+from .get import get_page , get_url

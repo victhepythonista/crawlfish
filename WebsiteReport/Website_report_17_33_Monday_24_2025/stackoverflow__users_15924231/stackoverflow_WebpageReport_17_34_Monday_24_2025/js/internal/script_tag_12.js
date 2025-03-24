@@ -1,0 +1,2 @@
+
+    dispatchEvent(new CustomEvent("openSignupModal"));

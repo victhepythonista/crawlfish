@@ -1,0 +1,39 @@
+
+======================================================================================
+		  WEB PAGE REPORT
+		 `````````````````
+https://www.zetech.ac.ke
+======================================================================================
+		
+	Metadata 
+-------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------
+keywords             Zetech University | Inventing the Future
+description          Zetech University | Inventing the Future
+generator            Joomla! - Open Source Content Management
+twitter:card         summary_large_image
+twitter:title        Zetech University
+twitter:description  Zetech University in Kenya is a premier technologically inclined chartered and ISO certified university offering quality education in different courses
+twitter:image        https://www.zetech.ac.ke/images/logo.png
+viewport             width=device-width, initial-scale=1.0
+-------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Urls stats
+--------------------  ------------------------
+Links from same site  1
+Discovered links      1
+Base url              https://www.zetech.ac.ke
+Network location      www.zetech.ac.ke
+--------------------  ------------------------
+
+	Static data
+-------------------------  --
+External Javasript files   15
+External CSS files         13
+Javascript  <script> tags  33
+JSON tags                   0
+CSS <style> tags            2
+Image files                77
+-------------------------  --
+
+============================================
+

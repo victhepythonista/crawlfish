@@ -1,0 +1,25 @@
+{
+    "static_stats": {
+        "js_tags": 28,
+        "css_tags": 2,
+        "js_urls": 17,
+        "css_urls": 7,
+        "image_urls": 51,
+        "json_tags": 6,
+        "elements_processed": 2600
+    },
+    "metadata": {
+        "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+        "twitter:card": "summary",
+        "twitter:domain": "stackoverflow.com",
+        "twitter:title": "Newest Questions",
+        "twitter:description": "Stack Overflow | The World’s Largest Online Community for Developers"
+    },
+    "urls": {
+        "base_url": "https://stackoverflow.com",
+        "network_location": "stackoverflow.com",
+        "same_site_links": 296,
+        "discovered_urls": 131,
+        "other_site_urls": 42
+    }
+}

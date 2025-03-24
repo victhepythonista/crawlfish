@@ -1,5 +1,11 @@
 dist/
 crawlfish_venv/
 notes/
-*.temp
+temp/
 junk_yard/
+tests/test_data/
+venv/
+*__pycache__/
+*.obsidian/
+venv.bat
+test_data/

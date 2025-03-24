@@ -1,0 +1,20 @@
+{
+    "static_stats": {
+        "js_tags": 13,
+        "css_tags": 1,
+        "js_urls": 10,
+        "css_urls": 4,
+        "image_urls": 0
+    },
+    "metadata": {
+        "keywords": "download sample clip, free clip download, download demo clip, download demo video, download dummy video, download video, download sample video, download video for developer, download mp4 video, download flv video, download mkv video",
+        "description": "Download sample video or test video for your testing purpose. We provides you different types of video formats with different size.",
+        "viewport": "width=device-width, initial-scale=1.0"
+    },
+    "urls": {
+        "base_url": "http://www.sample-videos.com",
+        "network_location": "www.sample-videos.com",
+        "same_site_links": 2,
+        "discovered_urls": 1
+    }
+}

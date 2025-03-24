@@ -3,7 +3,7 @@
 from unittest import TestCase 
 
 
-from .data import grocery_list_soup
+from .test_soups import grocery_list_soup
 
 from crawlfish.html import get_element_text , get_elements_text
 

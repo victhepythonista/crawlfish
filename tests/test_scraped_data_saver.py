@@ -23,13 +23,13 @@ test_scraped_data_dict = {
 		"Mark":{"AGE":"34" , "EMAIL" : 'mark@gmail.com'},
 
 }
-test_scraped_data_json = json.dumps(test_scraped_data_dict)
+test_scraped_data_json = test_scraped_data_dict
 data_saver = ListDataSaver()
 
 class TestListDataSaver(TestCase):
 
 	def test_saving_to_csv_file(self):
-		test_file = "tests/test_scraped_data.csv"
+		test_file = "tests/test_data/test_scraped_data.csv"
 		if os.path.isfile(test_file):
 			os.remove(test_file)
 		data_saver.to_csv_file(test_scraped_data , test_file)
@@ -48,7 +48,7 @@ class TestListDataSaver(TestCase):
 
 
 	def test_saving_to_spreadsheet_file(self):
-		test_file = "tests/test_scraped_data.xlsx"
+		test_file = "tests/test_data/test_scraped_data.xlsx"
 		if os.path.isfile(test_file):
 			os.remove(test_file)
 		data_saver.to_spreadsheet_file(test_scraped_data , test_file , sheet_name = "TestSheet1" , overwrite = True)
@@ -83,13 +83,13 @@ class TestListDataSaver(TestCase):
 		self.assertTrue( result == test_scraped_data_json )
 
 	def test_saving_to_json_file(self):
-		test_file = "tests/data_json.json"
+		test_file = "tests/test_data/data_json.json"
 		if os.path.isfile(test_file):
 			os.remove(test_file)
 		result = data_saver.to_json_file(test_scraped_data, file = test_file )
 		with open(test_file , "r" ) as f:
 			data = json.load(f)
-			self.assertTrue(json.dumps(data) == test_scraped_data_json)
+			self.assertTrue(data== test_scraped_data_json)
 		self.assertTrue( result == test_scraped_data_json )
 		self.assertTrue(os.path.isfile(test_file))
 		# test overwite 
@@ -113,10 +113,11 @@ class TestListDataSaver(TestCase):
 
 
 		# csv 
-		test_file = "tests/data.csv"
+		test_file = "tests/test_data/data.csv"
 		save_option  = CSVSaveOption(test_file)
-		data_saver.save_by_option(test_scraped_data , save_option)
+		result = data_saver.save_by_option(test_scraped_data , save_option)
 		self.assertTrue(os.path.isfile(test_file))
+		self.assertTrue(result == test_scraped_data)
 		with open(test_file , "r") as f:
 			reader = csv.reader(f)
 			rows = [row for row in reader]
@@ -124,9 +125,10 @@ class TestListDataSaver(TestCase):
 		os.remove(test_file)
 
 		# excel
-		test_file = "tests/excel.xlsx"
+		test_file = "tests/test_data/excel.xlsx"
 		save_option = ExcelSaveOption(test_file , "testsheet" )
-		data_saver.save_by_option(test_scraped_data , save_option)
+		result = data_saver.save_by_option(test_scraped_data , save_option)
+		self.assertTrue(result == test_scraped_data)
 		workbook  = openpyxl.load_workbook(test_file)
 		sheet = workbook["testsheet"]
 		sheet_values = [ [ i for i in row] for row in sheet.values  ]
@@ -136,14 +138,14 @@ class TestListDataSaver(TestCase):
 		# json 
 		save_option = JSONSaveOption(  )
 		result = data_saver.save_by_option(test_scraped_data , save_option)
-		self.assertTrue(json.dumps(test_scraped_data_dict) == result)
+		self.assertTrue(test_scraped_data_dict == result)
 
 		# json file
-		test_file = "tests/json.json"
+		test_file = "tests/test_data/json.json"
 		save_option = JSONFileSaveOption(test_file  )
 		result = data_saver.save_by_option(test_scraped_data , save_option)
-		self.assertTrue(json.dumps(test_scraped_data_dict) == result)
+		self.assertTrue(test_scraped_data_dict == result)
 		with open(test_file , "r" ) as f:
 			data = json.load(f)
-			self.assertTrue(json.dumps(data) == test_scraped_data_json)
+			self.assertTrue(data == test_scraped_data_json)
 		os.remove(test_file)

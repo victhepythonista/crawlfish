@@ -1,0 +1,3 @@
+https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
+
+https://docs.python.org/3/library/argparse.html

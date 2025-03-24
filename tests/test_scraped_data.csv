@@ -1,6 +1,5 @@
-NAME,AGE,EMAIL
-John,44,john@gmail.com
-Mao,66,maozedong@gmail.com
-Heather,77,heather@gmail.com
-Mark,34,mark@gmail.com
-Heisenberg,67,albrqq@gmail.com
+COMPANY_NAME,CEO_NAME
+company_website1,CEO1
+company_website2,CEO2
+company_website3,CEO3
+company_website4,CEO4

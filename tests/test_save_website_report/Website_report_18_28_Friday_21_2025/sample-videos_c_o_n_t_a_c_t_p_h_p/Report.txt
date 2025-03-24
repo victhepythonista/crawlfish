@@ -1,0 +1,31 @@
+
+======================================================================================
+		  WEB PAGE REPORT
+		 `````````````````
+http://www.sample-videos.com/contact.php
+======================================================================================
+		
+	Metadata 
+--------  -------------------------------------
+viewport  width=device-width, initial-scale=1.0
+--------  -------------------------------------
+
+	Urls stats
+--------------------  ----------------------------
+Links from same site  2
+Discovered links      1
+Base url              http://www.sample-videos.com
+Network location      www.sample-videos.com
+--------------------  ----------------------------
+
+	Static data
+-------------------------  -----------
+External Javasript files   6
+External CSS files         4
+Javascript  <script> tags  8
+CSS <style> tags           1
+0                          Image files
+-------------------------  -----------
+
+============================================
+

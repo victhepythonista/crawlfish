@@ -1,0 +1,165 @@
+
+
+
+
+
+
+
+
+
+	body.site {
+
+
+
+
+
+
+
+		border-top: 3px solid #0088cc;
+
+
+
+
+
+
+
+		background-color: #f4f6f7;
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+	a {
+
+
+
+
+
+
+
+		color: #0088cc;
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+	.nav-list > .active > a,
+
+
+
+
+
+
+
+	.nav-list > .active > a:hover,
+
+
+
+
+
+
+
+	.dropdown-menu li > a:hover,
+
+
+
+
+
+
+
+	.dropdown-menu .active > a,
+
+
+
+
+
+
+
+	.dropdown-menu .active > a:hover,
+
+
+
+
+
+
+
+	.nav-pills > .active > a,
+
+
+
+
+
+
+
+	.nav-pills > .active > a:hover,
+
+
+
+
+
+
+
+	.btn-primary {
+
+
+
+
+
+
+
+		background: #0088cc;
+
+
+
+
+
+
+
+	}#btcontentslider147 .bt_handles{top: 0px !important;right: 5px !important}
+		@media screen and (max-width: 480px){.bt-cs .bt-row{width:100%!important;}}#btcontentslider168 .bt_handles{top: 0px !important;right: 5px !important}
+		@media screen and (max-width: 480px){.bt-cs .bt-row{width:100%!important;}}#btcontentslider163 .bt_handles{top: 0px !important;right: 5px !important}
+		@media screen and (max-width: 480px){.bt-cs .bt-row{width:100%!important;}}
+		@media screen and (max-width: 480px){.bt-cs .bt-row{width:100%!important;}}#btcontentslider114 .bt_handles{top: 0px !important;right: 5px !important}
+		@media screen and (max-width: 480px){.bt-cs .bt-row{width:100%!important;}}#btcontentslider119 .bt_handles{top: 0px !important;right: 5px !important}
+		@media screen and (max-width: 480px){.bt-cs .bt-row{width:100%!important;}}#btcontentslider162 .bt_handles{top: 0px !important;right: 5px !important}
+		@media screen and (max-width: 480px){.bt-cs .bt-row{width:100%!important;}}#camera_wrap_183 .camera_pag_ul li img, #camera_wrap_183 .camera_thumbs_cont ul li > img {height:75px;}
+#camera_wrap_183 .camera_caption {
+	display: block;
+	position: absolute;
+}
+#camera_wrap_183 .camera_caption > div {
+	
+}
+#camera_wrap_183 .camera_caption > div div.camera_caption_title {
+	
+}
+#camera_wrap_183 .camera_caption > div div.camera_caption_desc {
+	
+}
+
+@media screen and (max-width: 480px) {
+		#camera_wrap_183 .camera_caption {
+			font-size: 0.6em !important;
+		}
+}
+	
