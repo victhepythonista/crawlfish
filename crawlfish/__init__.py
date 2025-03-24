@@ -1,5 +1,5 @@
 
 
-from .http import get_page , get_url
-from .html import *
-from .crawler import *
+from crawlfish.http import get_page , get_url
+from crawlfish.html import *
+from crawlfish.crawler import *
