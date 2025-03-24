@@ -12,7 +12,7 @@
 - It is simple and easy to understand
 - You can use it in Python (.py) files or directly from the **command line**
 - For more documentation go to the **docstrings** . I am yet to publish the full documentation , TBA .
-- Read <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/CONTRIBUTING.md" target="_blank">this </a> if you want to contribute
+- Read <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/CONTRIBUTING.md" target="_blank">this</a> if you want to contribute and <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/RELEASE_NOTES.md" target="_blank">here</a> to read the latest release notes .
 
  #### Key classes :
 
@@ -34,7 +34,7 @@
 		You can also save the HTML output to a file
 - <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/explore_website.py" target="_blank">explore website() </a>
 	Aggressively goes through a website one url at a time grabbing all needed data along the way . It will scrape the website until every url of the website has been processed .
-		Returns a crawlfish.WebsiteReport object that contains all the jicy information
+		Returns a crawlfish.WebsiteReport object that contains all the juicy information
 
 - <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/explore_webpage.py" target="_blank">explore_webpage() </a>
 	Collects static code , static files urls , metadata , urls of the same site and other info from a web page . 

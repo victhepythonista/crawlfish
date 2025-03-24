@@ -11,4 +11,5 @@
 # VERSION 0.0.2
 
 - More usage info in the README 
-- CONTRIBUTING.md added
+- CONTRIBUTING how tos added
+- RELEASE_NOTES added
