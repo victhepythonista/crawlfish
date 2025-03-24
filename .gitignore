@@ -11,3 +11,4 @@ venv.bat
 test_data/
 crawlfish.egg-info/
 api.js
+mydata/
