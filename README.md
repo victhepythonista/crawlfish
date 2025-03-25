@@ -3,7 +3,9 @@
 
 <div align="center">
 <a href="https://www.python.org/"><img height=30  src="https://img.shields.io/badge/built%20with-Python3-blue.svg" alt="built with Python3"></a>
-		<a href="https://pepy.tech/projects/crawlfish"><img height=30 src="https://static.pepy.tech/badge/crawlfish" alt="PyPI">
+
+[![PyPI Downloads](https://static.pepy.tech/badge/crawlfish)](https://pepy.tech/projects/crawlfish)
+		 
 <a href="https://github.com/victhepythonista/crawlfish"><img height=30   src="https://img.shields.io/github/stars/victhepythonista/crawlfish.svg?style=social&label=Stars"></a>
 </div>
 
