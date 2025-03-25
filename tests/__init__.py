@@ -24,3 +24,4 @@ from .test_extract_html_meta import *
 from .test_url_to_folder_name import *
 
 from .test_check_file import *
+from .test_get_page_with_driver import *
