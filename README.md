@@ -198,7 +198,7 @@ help(explore_website)
 from crawlfish import get_page , get_url 
 
 # get a requests.Response object of a page
-response = get_page("https://stackoverflow.com")
+response = get_url("https://stackoverflow.com")
 
 # get the html of a page
 response = get_page("https://stackoverflow.com")
