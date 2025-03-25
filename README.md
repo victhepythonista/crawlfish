@@ -10,7 +10,7 @@
 </div>
 
 
-- An easy to use web crawling library for exploring whole websites and webpages , element searching , handy bs4 related shortcuts , generic web scraping functions  and  more 
+- An easy to use web crawling library with handy functions for exploring whole websites or single webpages , dynamic element searching , generic web scraping  and  more . It also helpful shortcut functions for bs4 , requests and selenium .
 - It is simple and easy to understand
 - You can use it in Python (.py) files or directly from the **command line**
 - For more documentation go to the **docstrings** . I am yet to publish the full documentation , TBA .
