@@ -1,19 +1,5 @@
 from crawlfish.crawler.exceptions import InvalidSaveOptionError  
-
-class save_formats:
-	'''
-	For representing the save format for scraped data 
-	The attributes just act as quick to access identifiers for the save type when only the save type is needed
-
-
-	''' 
-
-	EXCEL_FILE = "EXCEL_SPREADSHEET_FORMAT"
-	CSV_FILE = "CSV_FORMAT"
-	JSON  = "jSON OBJECT"
-	JSON_FILE = "JSON FILE " 
-	STATIC_CODE = "JAVASCRIPT_OR_CSS_CODE"
-	IMAGE = "PNGs, JPEGS ....."
+from save_formats  import save_formats
 
 
 
@@ -58,7 +44,7 @@ class JSONFileSaveOption(SaveOption):
 				 ensure_ascii:bool = False  ,
 				 indent:int = 4 , 
 				 encoding:str = 'utf-8' ):
-		self.save_format = save_formats.JSON 
+		self.save_format = save_formats.JSON_FILE
 		self.key_index = key_index 
 		self.ensure_ascii = ensure_ascii
 		self.encoding = encoding
