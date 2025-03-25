@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="crawlfish",
-    version="0.0.8",
+    version="0.0.9",
     author="Victor Kipkemboi",
     author_email="scriptilapia@gmail.com",
     long_description =long_description,
