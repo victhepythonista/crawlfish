@@ -75,7 +75,7 @@ pip install crawlfish
 
 - Here is a quick intro on how to use this library on the cmd
 
-- The command below will crawl the Stackoverflow up to a depth of 5 webpages and save the data in the current directory 
+- The command below will crawl the Stackoverflow website up to a depth of 5 webpages and save the data in the current directory  starting from the url provided
 
 ```
 python -m crawlfish --crawl-site --url https://stackoverflow.com --crawl-limit 4
