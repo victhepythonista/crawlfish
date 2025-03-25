@@ -13,3 +13,8 @@
 
 - Fixed the pepy badge in README
 - More README tweaks
+
+# VERSION 0.1.0
+
+- Fetching pages with selenium webdrivers 
+

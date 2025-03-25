@@ -64,6 +64,7 @@ pip install crawlfish
 - tabulate
 - tqdm
 - requests
+- selenium
 
 
 
@@ -74,7 +75,7 @@ pip install crawlfish
 
 - Here is a quick intro on how to use this library on the cmd
 
-- The command below will crawl the Stackoverflow up to a depth of 5 webpages and save the data in the current directory 
+- The command below will crawl the Stackoverflow website up to a depth of 5 webpages and save the data in the current directory  starting from the url provided
 
 ```
 python -m crawlfish --crawl-site --url https://stackoverflow.com --crawl-limit 4
@@ -195,19 +196,48 @@ help(explore_website)
 ### Fetching web pages
 
 ```python
-from crawlfish import get_page , get_url 
+>>> from crawlfish import get_page , get_url , get_page_with_driver
+>>>
+>>> # get a requests.Response object of a page
+>>> response = get_page("https://www.sample-videos.com")
+Getting page ->  https://www.sample-videos.com DONE
+>>>
+>>> # get the html of a page
+>>> response = get_page("https://www.sample-videos.com")
+Getting page ->  https://www.sample-videos.com DONE
+>>>
+>>> # get the bs4.BeautifulSoup instance fo a page
+>>> soup = get_page("https://www.sample-videos.com" , soup = True )
+Getting page ->  https://www.sample-videos.com DONE
+>>>
+>>> # save the page to a file
+>>> response = get_page("https://www.sample-videos.com" , output_file = "test_data/stack.html")
+Getting page ->  https://www.sample-videos.com DONE
+Writing response content to file test_data/stack.htmlDONE
+>>>
+>>> # Fetch a page with a  selenium webdriver
+>>> from selenium import webdriver
+>>> from selenium.webdriver.firefox.options import Options
+>>> # Initialize your webdriver
+>>> options = Options()
+>>> options.add_argument("--headless")
+>>> driver = webdriver.Firefox(options = options)
+>>> html = get_page_with_driver( 'https://www.sample-videos.com' , driver)
+Fetching page with driver  <selenium.webdriver.firefox.webdriver.WebDriver (session="9a456c4c-756f-4bc8-a0f9-b973e3ef9a17")> <class 'selenium.webdriver.firefox.webdriver.WebDriver'>
+Page HTML fetched successfully
+>>>
+>>> # Fetch using a selenium webdriver and save a page to a file
+>>> html = get_page_with_driver( 'https://www.sample-videos.com' , driver , output_file = "test_data/withdriver.html")
+Fetching page with driver  <selenium.webdriver.firefox.webdriver.WebDriver (session="9a456c4c-756f-4bc8-a0f9-b973e3ef9a17")> <class 'selenium.webdriver.firefox.webdriver.WebDriver'>
+Page HTML fetched successfully
+Writing HTML to file test_data/withdriver.htmlDONE
 
-# get a requests.Response object of a page
-response = get_url("https://stackoverflow.com")
+>>>
+>>>
+>>> driver.quit()
+>>>
 
-# get the html of a page
-response = get_page("https://stackoverflow.com")
 
-# get the bs4.BeautifulSoup instance fo a page
-soup = get_page("https://stackoverflow.com" , soup = True )
-
-# save the page to a file 
-response = get_page("https://stackoverflow.com" , output_file = "test_data/stack.html")
 
 ```
 
