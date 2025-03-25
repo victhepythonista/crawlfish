@@ -4,7 +4,7 @@
 <div align="center">
 <a href="https://www.python.org/"><img height=30  src="https://img.shields.io/badge/built%20with-Python3-blue.svg" alt="built with Python3"></a>
 
-[![PyPI Downloads](https://static.pepy.tech/badge/crawlfish)](https://pepy.tech/projects/crawlfish)
+<a href="https://pepy.tech/projects/crawlfish"><img src="https://static.pepy.tech/badge/crawlfish" alt="PyPI Downloads"></a>
 		 
 <a href="https://github.com/victhepythonista/crawlfish"><img height=30   src="https://img.shields.io/github/stars/victhepythonista/crawlfish.svg?style=social&label=Stars"></a>
 </div>
@@ -15,6 +15,7 @@
 - You can use it in Python (.py) files or directly from the **command line**
 - For more documentation go to the **docstrings** . I am yet to publish the full documentation , TBA .
 - Read <a href="https://github.com/victhepythonista/crawlfish/blob/main/CONTRIBUTING.md" target="_blank">this</a> if you want to contribute and <a href="https://github.com/victhepythonista/crawlfish/blob/main/RELEASE_NOTES.md" target="_blank">here</a> to read the latest release notes .
+- Ensure to install VERSION 0.0.8 and above 
 
  #### Key classes :
 

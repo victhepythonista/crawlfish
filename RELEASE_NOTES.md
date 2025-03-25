@@ -1,15 +1,15 @@
 
-# VERSION 0.0.1
-
-- Finding elements with ElementFinder
-- Web crawling added
-- HTML shortcuts added
-
----
+# VERSION 0.0.1 - VERSION 0.0.7
+ 
+- These versions have issues. Make sure to use version 0.0.8 and above
 
 
-# VERSION 0.0.2
+# VERSION 0.0.8
 
-- More usage info in the README 
-- CONTRIBUTING how tos added
-- RELEASE_NOTES added
+- A stable version with all features working as expected
+
+
+# VERSION 0.0.9
+
+- Fixed the pepy badge in README
+- More README tweaks
