@@ -64,6 +64,7 @@ pip install crawlfish
 - tabulate
 - tqdm
 - requests
+- selenium
 
 
 
