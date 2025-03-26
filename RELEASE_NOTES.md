@@ -18,3 +18,9 @@
 
 - Fetching pages with selenium webdrivers 
 
+# VERSION 0.1.1
+
+- Readme tutorial addition on using custom get functions
+- moved the save_formats.py  module contents from crawler subpackage to 'data_saving_formats.py'
+
+
