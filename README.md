@@ -1,11 +1,12 @@
-#                                  CRAWLFISH
+<p align="center" >
+CRAWLFISH
+</p>                                  
 
 
 <div align="center">
 
-  <img src="https://i.ibb.co/1ffj601H/crawlfish-bw.png" alt="crawlfish-bw" height="300"/> 
+  <img src="https://i.ibb.co/1ffj601H/crawlfish-bw.png" alt="Logo" height="300"/> 
 </div>
-
 
 
 
@@ -16,6 +17,9 @@
 		 
 <a href="https://github.com/victhepythonista/crawlfish"><img height=30   src="https://img.shields.io/github/stars/victhepythonista/crawlfish.svg?style=social&label=Stars"></a>
 </div>
+
+
+---
 
 
 - An easy to use web crawling Python package packed with handy functions for exploring whole websites or single webpages , dynamic element searching , generic web scraping  and  more . It also has helpful shortcut functions for bs4 , requests and selenium .
