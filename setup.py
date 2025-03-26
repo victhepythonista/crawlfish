@@ -33,7 +33,7 @@ setup(
             'tldextract',
             'bs4',
             'tqdm',
-            ]
+            ],
     packages=find_packages(),
     python_requires=">=3.6",
  
