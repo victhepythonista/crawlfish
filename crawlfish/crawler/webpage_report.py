@@ -1,5 +1,6 @@
 import json 
 import os
+from types import FunctionType
 from collections.abc import Iterable
 from urllib.parse import urlsplit, urlunsplit
 from datetime import datetime
@@ -95,7 +96,7 @@ class WebpageReport:
 		other_site_urls:Iterable=[] , 
 		same_site_urls:Iterable = [] ,
 		soup:BeautifulSoup =None, 
-		get_function = get_url,
+		get_function:FunctionType = get_url,
   		html ='' 
   		):
 		tld_result = tldextract.extract(url)
@@ -118,7 +119,7 @@ class WebpageReport:
 		self.js_tags = js_tags 
 		self.json_tags = json_tags
 		self.title = title 
-		self.metadata = meta data
+		self.metadata = metadata
 		self.same_site_urls = same_site_urls
 		self.split_url = urlsplit(url)
 		self.network_location = self.split_url.netloc

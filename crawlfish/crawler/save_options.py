@@ -1,5 +1,5 @@
 from crawlfish.crawler.exceptions import InvalidSaveOptionError  
-from save_formats  import save_formats
+from crawlfish.data_saving_formats import save_formats
 
 
 

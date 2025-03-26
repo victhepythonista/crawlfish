@@ -1,14 +1,8 @@
 import os 
 import sys 
-
-
 import art
 import argparse
-
-
 from ascii_magic import AsciiArt 
-
-
 from crawlfish import  crawler , supported
 from crawlfish import crawlfish_utils
 

@@ -1,9 +1,11 @@
 import os
 from collections.abc import Iterable
 from datetime import datetime
+from types import FunctionType
 from tabulate import tabulate
 from tqdm import tqdm
 from .url_to_folder_name import url_to_folder_name
+from crawlfish import get_url
 
 
 SUMMARY_REPORT = """
@@ -21,15 +23,19 @@ class WebsiteReport:
 	----------
 	page_reports:dict
 		A dictionary containing page reports. Format -> { folder_name:WebpageReport }
+	get_function:FunctionType
+		A function that takes a url argument and returns a requests.Response object
+
 	'''
 
-	def __init__(self , page_reports:dict):
+	def __init__(self , page_reports:dict , get_function:FunctionType = get_url):
 		self.page_reports = page_reports
 		self.js_files_num =0 
 		self.css_files_num = 0 
 		self.images_num = 0 
 		self.other_site_urls = []
 		self.elements_processed = 0
+		self.get_function = get_function
 		self.process_stats()
 
 	def __repr__(self):
@@ -96,6 +102,7 @@ class WebsiteReport:
 
 		for folder_name , page_report in tqdm(self.page_reports.items(), "Saving page report --- "):
 			page_report_folder = os.path.join(output_folder,folder_name)
+			page_report.get_function = self.get_function
 			if redownload_static:
 				page_report.already_downloaded_static = static_data_downloaded
 			download_images  ,download_js , download_css = False if 'img' in exclude_static else True  , False if 'js' in exclude_static else True  , False if 'css' in exclude_static else True  

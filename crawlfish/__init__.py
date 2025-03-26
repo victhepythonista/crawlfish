@@ -4,7 +4,7 @@ from .http import *
 from .html import *
 from .crawler import *
 from .crawlfish_utils import *
-from .save_formats import save_formats
+from crawlfish.data_saving_formats import save_formats
 
 
 
@@ -38,4 +38,5 @@ __all__ = [
 	'JSONSaveOption',
 	'JSONFileSaveOption',
 	'CSVSaveOption',
+	'save_formats'
 ]

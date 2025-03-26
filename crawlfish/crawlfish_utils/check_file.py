@@ -10,7 +10,7 @@ def check_file(file_path:str , make_if_none:bool = True  ,encoding:str = "utf-8"
 	file_path:str
 		The file path to check
 	make_if_none:bool
-		Whether or not to try and make he file if it doesnt exist
+		Whether or not to try and make the file if it doesn't exist
 	encoding:str
 		The encodng to use when attempting to create the file 
 

@@ -91,7 +91,6 @@ def explore_webpage(
 	possible_url_leads = []
 	other_site_urls = [] 
 	for tag in href_tags:
-		print("URL poss", tag['href'])
 		link = ensure_url_format(base_url , tag['href'])
 		if not ensure_html_url(link):
 			print("NOT TRUE URL ")
