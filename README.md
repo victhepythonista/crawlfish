@@ -1,29 +1,43 @@
+<p align="center" >
+CRAWLFISH
+</p>                                  
 
-#                            CRAWLFISH
+
+<div align="center">
+
+  <img src="https://i.ibb.co/1ffj601H/crawlfish-bw.png" alt="Logo" height="300"/> 
+</div>
+
+
 
 <div align="center">
 <a href="https://www.python.org/"><img height=30  src="https://img.shields.io/badge/built%20with-Python3-blue.svg" alt="built with Python3"></a>
 
-<a href="https://pepy.tech/projects/crawlfish"><img src="https://static.pepy.tech/badge/crawlfish" alt="PyPI Downloads"></a>
+<a href="https://pepy.tech/projects/crawlfish"><img  height=30 src="https://static.pepy.tech/badge/crawlfish" alt="PyPI Downloads"></a>
 		 
 <a href="https://github.com/victhepythonista/crawlfish"><img height=30   src="https://img.shields.io/github/stars/victhepythonista/crawlfish.svg?style=social&label=Stars"></a>
 </div>
 
 
-- An easy to use web crawling library with handy functions for exploring whole websites or single webpages , dynamic element searching , generic web scraping  and  more . It also has helpful shortcut functions for bs4 , requests and selenium .
+---
+
+
+- An easy to use web crawling Python package packed with handy functions for exploring whole websites or single webpages , dynamic element searching , generic web scraping  and  more . It also has helpful shortcut functions for bs4 , requests and selenium .
 - It is simple and easy to understand
 - You can use it in Python (.py) files or directly from the **command line**
-- For more documentation go to the **docstrings** . I am yet to publish the full documentation , TBA .
+- For more documentation go to the **docstrings** . I am yet to publish the full documentation , TBA.
 - Read <a href="https://github.com/victhepythonista/crawlfish/blob/main/CONTRIBUTING.md" target="_blank">this</a> if you want to contribute and <a href="https://github.com/victhepythonista/crawlfish/blob/main/RELEASE_NOTES.md" target="_blank">here</a> to read the latest release notes .
 - Ensure to install VERSION 0.0.8 and above 
 
  #### Key classes :
 
 - <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/webpage_report.py" target="_blank">WebpageReport </a>
+   Contains information collected after exploring a webpage
 - <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/html/element_finder.py" target="_blank">ElementFinder</a>
 	-A handy class that allows you to flexibly search for elements in a bs4.BeautifulSoup instance or a HTML string . 
-	 Has regex support when searching for text matches and atribute values  
+	 Has **regex** support when searching for text matches and atribute values  
 -  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/website_report.py" target="_blank">WebsiteReport </a>
+		Contains information collected after exploring a website
 -  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/crawler.py" target="_blank">UrlsCrawler</a>
 	For generic web scraping programs that scrap urls from a list or file containing the urls line by line 
 -  <a href="https://github.com/victhepythonista/crawlfish/blob/main/crawlfish/crawler/save.py" target="_blank">ListDataSaver</a>
@@ -43,6 +57,7 @@
 	Collects static code , static files urls , metadata , urls of the same site and other info from a web page . 
 		Returns a WebpageReport object that contains the information scraped
 	
+
 
 
  
@@ -65,6 +80,8 @@ pip install crawlfish
 - tqdm
 - requests
 - selenium
+- openpyxl
+
 
 
 
@@ -79,7 +96,7 @@ pip install crawlfish
 
 
 ```
-python -m crawlfish --crawl-site --url https://stackoverflow.com --crawl-limit 4
+python -m crawlfish --crawl-site --url https://stackoverflow.com --crawl-limit 5
 ```
 
 - You can add urls on the command line or provide a text based file containing the urls 
@@ -146,10 +163,16 @@ options:
 
 ---
 
-# Quick start
+# QUICK START
 
 - A brief straightfoward tutorial of the library's main functions and  key classes .
 - Let's get started with some examples !
+
+
+
+
+---
+
 
 ### Crawling a web page
 
@@ -179,6 +202,11 @@ options:
 
 
 
+
+---
+
+
+
 ### Crawling a website
 
 ```python
@@ -194,6 +222,10 @@ website_report.save(output_folder = "WebsiteReport")
 help(website_report)
 help(explore_website)
 ```
+
+
+
+---
 
 
 
@@ -244,6 +276,13 @@ Writing HTML to file test_data/withdriver.htmlDONE
 
 
 ```
+
+
+
+---
+
+
+
 
 ### Downloading files 
 
@@ -351,7 +390,7 @@ Finding elements : 100%|██████████████████�
 ```
 
 
-#### Search elements by tag name , attribute name and attribute value
+##### Search elements by tag name , attribute name and attribute value
 
 ```python
 >>> from crawlfish import ElementFinder
@@ -388,7 +427,7 @@ Finding elements : 100%|██████████████████�
 ```
 
 
-#### Search elements by text match
+##### Search elements by text match
 
 - You can look for elements based on their the text content
 - You can also use regex 
@@ -421,7 +460,7 @@ Finding elements : 100%|██████████████████�
 ```
 
 
-#### Search elements by tag names , attribute names ,attribute values and text matches
+##### Search elements by tag names , attribute names ,attribute values and text matches
 
 - You can search multiple values at the same time 
 - In this example let's look for elements that  contain valid email addresses in their text contents
@@ -492,9 +531,14 @@ Finding elements : 100%|██████████████████�
 
 
 
+
+---
+
+
+
 ## Using the UrlsCrawler class
 
-- The UrlsCrawler class is used whe one want to scrape a list of urls in a list object or in a file containing the links one by one
+- The UrlsCrawler class is used when one want to scrape  urls in an iterable or in a file containing the urls line by line
 - Here is an example
 
 ```python
@@ -565,6 +609,11 @@ AGE,NAME,EMAIL
 >>> data
 [['23', 'John', 'john@gmail.com'], ['23', 'John', 'john@gmail.com'], ['23', 'John', 'john@gmail.com']]
 ```
+
+
+
+---
+
 
 ## Using the ListDataSaver class
 
@@ -639,6 +688,63 @@ AGE,NAME,EMAIL
 
 
 ```
+
+
+
+
+---
+
+
+#### Using your own custom functions to fetch urls
+
+- Crawlfish allows for you to use your own funtions for fetching urls , by default it has its own functions for fetching urls so no need to bother changing unless you really need to .
+- These functions are expected to take a **url string**  (eg https//somesite.com ) as an argument and return a ***requests.Response*** object
+- Here are some usage instances just to give you an idea ,I recommend using the inbuilt  ***help()*** function if you get stuck
+
+
+
+```python
+
+
+import requests 
+from crawlfish import explore_website ,explore_webpage , WebpageReport , WebsiteReport
+
+
+webpage_url = "https://www.sample-videos.com/"
+
+def custom_get_function(url):
+	'''A custom fetch function to be used by crawlfish 
+	It returns a requets.Response object'''
+	print("Custom getting website")
+	response = requests.get(url)
+	print("Foun response")
+	return response
+
+
+# explore a website
+website_report = explore_website(webpage_url , get_function = custom_get_function , crawl_limit = 2)
+
+
+# explore a web page
+webpage_report = explore_webpage(webpage_url , get_function = custom_get_function)
+
+
+# Saving a webpage_report 
+webpage_report.save(output_folder = "test_data/mypagereport/"  )
+website_report.save(output_folder = "test_data/mysitereport/"  )
+
+# You can also change the function any time and when you use
+# the save()  method next time , it will fecth urls using the provided functions
+webpage_report.get_function = custom_get_function
+website_report.get_function = custom_get_function
+
+
+
+
+```
+
+
+
 
 
 

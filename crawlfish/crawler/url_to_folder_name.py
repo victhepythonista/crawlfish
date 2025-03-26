@@ -24,6 +24,9 @@ def clean_split_part(part:str):
 		if char in wanted_charachters:
 			result += char
 	return result
+
+
+	
 def url_to_folder_name(url:str):
 	"""Converts a url to a value that can be used as a folder name safely
 

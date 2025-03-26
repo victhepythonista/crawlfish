@@ -1,5 +1,6 @@
 import json 
 import os
+from types import FunctionType
 from collections.abc import Iterable
 from urllib.parse import urlsplit, urlunsplit
 from datetime import datetime
@@ -95,14 +96,15 @@ class WebpageReport:
 		other_site_urls:Iterable=[] , 
 		same_site_urls:Iterable = [] ,
 		soup:BeautifulSoup =None, 
-		get_function = get_url,
+		get_function:FunctionType = get_url,
   		html ='' 
   		):
 		tld_result = tldextract.extract(url)
 		self.domain = tld_result.domain
 		self.url = url
+		self.base_url  = get_base_url(url)
 		self.soup = soup
-		self.get_function = get_url
+		self.get_function = get_function
 		self.html = ''
 		self.elements_processed = 0
 		if soup:
@@ -121,11 +123,9 @@ class WebpageReport:
 		self.same_site_urls = same_site_urls
 		self.split_url = urlsplit(url)
 		self.network_location = self.split_url.netloc
-		self.base_url  = get_base_url(url)
 		self.discovered_urls = []
 		self.all_site_urls = []
 		self.other_site_urls = other_site_urls
-		self.DiscoverMoreSameSiteLinks()
 		self.internal_css_code ={}
 		self.external_css_code ={}
 		self.internal_js_code ={}
@@ -135,6 +135,7 @@ class WebpageReport:
 		self.already_downloaded_static = {}
 		self.all_static_urls = self.image_urls + self.js_urls + self.css_urls
 		self.all_static_data = {} # all static data . images, js , css
+		self.DiscoverMoreSameSiteLinks()
 		self.ExtractInternalCode()
 
 
@@ -185,7 +186,7 @@ class WebpageReport:
 		return data 
 
 	def save_to_config_file(self , file:str ,encoding:str='utf-8'):
-		''' Save the page report data in a congi file using configparser
+		''' Save the page report data in config  file using configparser
 		Parameters
 		----------
 		file:str
