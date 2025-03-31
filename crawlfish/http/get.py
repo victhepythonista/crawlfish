@@ -1,6 +1,7 @@
 import requests , socket , os  ,time 
 import urllib3
 from selenium import webdriver
+from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.remote.webdriver import WebDriver as BaseSeleniumWebDriver
 from bs4 import BeautifulSoup
 from crawlfish.crawlfish_utils import check_file
@@ -129,7 +130,7 @@ def get_page_with_driver(
 	url:str ,
 	driver:BaseSeleniumWebDriver ,
 	retry_timeout:int = 5 , 
-	max_retries:int = 20 , 
+	max_retries:int = 30 , 
 	retry_count:int = 0 , 
 	output_file:str = "" ):
 	'''Try to get a web page using a selenium.webdriver.WebDriver object 
@@ -153,13 +154,13 @@ def get_page_with_driver(
 	Returns
 	-------
 	html:str
-		The html found after fetching the url
+		The html found after fetching the url ,an empty string if the page can't be reached
 	'''
 	print("Fetching page with driver " , driver , type(driver))
 	html = ""
 	if not isinstance(driver , BaseSeleniumWebDriver ):
 		raise ValueError("Expected a webdriver.Remote object ")
-	tolerable_exceptions = (urllib3.exceptions.ReadTimeoutError , TimeoutError )
+	tolerable_exceptions = (urllib3.exceptions.ReadTimeoutError , TimeoutError , WebDriverException )
 	try:
 		driver.get(url)
 	except tolerable_exceptions as e:
@@ -169,6 +170,7 @@ def get_page_with_driver(
 		time.sleep(retry_timeout)
 		if retry_count >= max_retries:
 			print("========= TIMEOUT REACHED , Could not fetch url =========")
+			return ''
 		retry_count += 1
 		return get_page_with_driver(url , driver , retry_timeout,
 						max_retries , retry_count , output_file)
