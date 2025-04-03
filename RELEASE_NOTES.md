@@ -24,3 +24,8 @@
 - moved the save_formats.py  module contents from crawler subpackage to 'data_saving_formats.py'
 
 
+# VERSION 0.1.2
+
+- Added dependencies to setup.py 
+
+

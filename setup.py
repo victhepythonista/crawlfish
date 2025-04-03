@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="crawlfish",
-    version="0.1.1",
+    version="0.1.3",
     author="Victor Kipkemboi",
     author_email="scriptilapia@gmail.com",
     long_description =long_description,
@@ -23,6 +23,17 @@ setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License"
     ],
+    install_requires = [
+            'art',
+            'ascii-magic',
+            'openpyxl',
+            'selenium' , 
+            'requests', 
+            'tabulate' ,
+            'tldextract',
+            'bs4',
+            'tqdm',
+            ],
     packages=find_packages(),
     python_requires=">=3.6",
  
