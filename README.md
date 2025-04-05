@@ -5,7 +5,7 @@ CRAWLFISH
 
 <div align="center">
 
-  <img src="https://i.ibb.co/1ffj601H/crawlfish-bw.png" alt="Logo" height="300"/> 
+  <img src="https://i.ibb.co/YTTFtDb9/crawlfish-purple-Untitled.png" alt="Logo" height="300"/> 
 </div>
 
 

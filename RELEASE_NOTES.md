@@ -28,4 +28,12 @@
 
 - Added dependencies to setup.py 
 
+# VERSION 0.1.3
+- Added package dependencies in setup.py 
+
+# VERSION 0.1.4
+- Logo update (temporary)
+
+
+
 
