@@ -2,7 +2,7 @@ import requests , socket , os  ,time
 import urllib3
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.remote.webdriver import WebDriver as BaseSeleniumWebDriver
+from selenium.webdriver.remote.webdriver import BaseWebDriver as BaseSeleniumWebDriver
 from bs4 import BeautifulSoup
 from crawlfish.crawlfish_utils import check_file
 

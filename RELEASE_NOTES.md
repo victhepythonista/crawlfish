@@ -34,6 +34,10 @@
 # VERSION 0.1.4
 - Logo update (temporary)
 
+# VERSION 0.1.5 
+- Fixed the  'driver type' bug  the crawlfish.http.get.get_page_with_driver funtion
+
+
 
 
 
