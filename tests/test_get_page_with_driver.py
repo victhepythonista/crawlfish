@@ -33,3 +33,5 @@ class Test_get_page_with_webdriver(TestCase):
 		with open(test_output_file , "r") as f :
 			data = f.read()
 			self.assertTrue(len(data) > 0)
+
+
